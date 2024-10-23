@@ -144,57 +144,70 @@ function DesktopApp() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-2xl font-bold text-indigo-700">Important Information</h3>
-              <button onClick={() => setShowModal(false)} className="text-gray-500 hover:text-gray-700">
-                <X className="w-6 h-6" />
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 overflow-y-auto">
+          <div className="bg-white rounded-lg p-8 max-w-md w-full my-8 relative max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-white pb-4 border-b border-gray-200 mb-4 z-10">
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl font-bold text-indigo-700">Important Information</h3>
+                <button 
+                  onClick={() => setShowModal(false)} 
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div>
+       
+              </div>
+<div><h4 className="text-xl font-bold text-indigo-700 mb-4">You need to read everything carefully and click the checkmark at the bottom of this popup to get the app download.</h4>
+                  <ul className="list-disc list-inside text-gray-600 space-y-2">
+                    <li>This is a desktop app and the web-extension/addon intgration will be done in coming days, for now you need to - Install the app using the link provided below to get your downloads.</li>
+                     <li>After installing, launch the app from the desktop icon, paste the video url in the provided text box and then click the "+" icon to add downloads to queue. You can see the video demo here - <a href='https://www.yourvideofile.org/download/dist/video-dwonloader-demo.mp4' target='_blank'>https://www.yourvideofile.org/download/dist/video-dwonloader-demo.mp4</a> </li>
+
+                  </ul>
+  
+</div>
+              <div>
+                <h4 className="text-xl font-bold text-indigo-700 mb-4">Known Issues</h4>
+                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                  <li>This is the beta version, and the app is not signed yet. Your operating-system/browser might show a warning which can be safely ignored.</li>
+                  <li>On the first launch, allow the app to finish downloading <strong>ffmpeg, ffprobe, and the background video-grab engine</strong>. Attempting to download links before completion of this process will result in downloads not working. If the process gets stuck, try restarting the app.</li>
+                  <img src="https://desktop.videodroid.org/img/first-launch.png" alt="First Launch" className="my-4 rounded-lg shadow-md" />
+                  <li>The button to open the downloaded file or folder is currently not working. Please use the folder icon at the bottom of the app to access your downloads. This folder will be your default download location unless changed in the <strong>Settings</strong> (gear icon) screen. This will be fixed in next release.</li>
+                  <img src="https://desktop.videodroid.org/img/folder-open-icon.png" alt="Folder Open Icon" className="my-4 rounded-lg shadow-md" />
+                  <li>This software is for personal use only, respect copyright laws and the terms of service of the websites you download from, We are not responsible for any misuse of this software.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="sticky bottom-0 bg-white pt-4 border-t border-gray-200 mt-6">
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  checked={agreedToTerms}
+                  onChange={(e) => setAgreedToTerms(e.target.checked)}
+                  className="mr-2"
+                />
+                <label htmlFor="terms" className="text-gray-700">
+                  I have read this carefully
+                </label>
+              </div>
+              <button
+                onClick={startDownload}
+                disabled={!agreedToTerms}
+                className={`w-full py-2 px-4 rounded ${
+                  agreedToTerms
+                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                } transition-colors duration-300`}
+              >
+                Start Download
               </button>
             </div>
-            <div className="mb-6">
-              <p className="text-gray-700 mb-4">
-                Before downloading Easy Video Downloader Express, please read and acknowledge the following:
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>This software is for personal use only.</li>
-                <li>Respect copyright laws and the terms of service of the websites you download from.</li>
-                <li>We are not responsible for any misuse of this software.</li>
-              </ul>
-            </div>
-            <div className="mb-6">
-              <h4 className="text-xl font-bold text-indigo-700 mb-4">Known Issues</h4>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>This is the beta version, and the app is not signed yet. Your operating-system/browser might show a warning which can be safely ignored.</li>
-                <li>On the first launch, allow the app to finish downloading <strong>ffmpeg, ffprobe, and the background video-grab engine</strong>. Attempting to download links before completion of this process will result in downloads not working. If the process gets stuck, try restarting the app.</li>
-                <img src="https://desktop.videodroid.org/img/first-launch.png" alt="First Launch" className="my-4 rounded-lg shadow-md" />
-                <li>The button to open the downloaded file or folder is currently not working. Please use the folder icon at the bottom of the app to access your downloads. This folder will be your default download location unless changed in the <strong>Settings</strong> (gear icon) screen. This will be fixed in next release.</li>
-                <img src="https://desktop.videodroid.org/img/folder-open-icon.png" alt="Folder Open Icon" className="my-4 rounded-lg shadow-md" />
-              </ul>
-            </div>
-            <div className="flex items-center mb-6">
-              <input
-                type="checkbox"
-                id="terms"
-                checked={agreedToTerms}
-                onChange={(e) => setAgreedToTerms(e.target.checked)}
-                className="mr-2"
-              />
-              <label htmlFor="terms" className="text-gray-700">
-                I have read and agree to the above terms
-              </label>
-            </div>
-            <button
-              onClick={startDownload}
-              disabled={!agreedToTerms}
-              className={`w-full py-2 px-4 rounded ${
-                agreedToTerms
-                  ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              } transition-colors duration-300`}
-            >
-              Start Download
-            </button>
           </div>
         </div>
       )}
