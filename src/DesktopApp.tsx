@@ -3,12 +3,14 @@ import { Monitor, Laptop, Terminal, Youtube, Music, Film, List, User, Subtitles,
 import { Helmet } from 'react-helmet-async';
 
 const osIcons = {
+  'Windows 7': Monitor,
   Windows: Monitor,
   macOS: Laptop,
   Linux: Terminal,
 };
 
 const downloadLinks = {
+  'Windows 7': 'https://www.yourvideofile.org/download/dist/windows-easy.video.downloader-0.4.0_beta.exe',
   Windows: 'https://www.yourvideofile.org/download/dist/windows-easy.video.downloader-0.4.0_beta.exe',
   macOS: 'https://www.yourvideofile.org/download/dist/macOS-easy.video.downloader-0.4.0_beta.dmg',
   Linux: 'https://www.yourvideofile.org/download/dist/linux-easy.video.downloader-0.4.0_beta.AppImage',
@@ -33,6 +35,7 @@ function DesktopApp() {
   useEffect(() => {
     const detectOS = () => {
       const userAgent = window.navigator.userAgent.toLowerCase();
+      if (userAgent.indexOf("windows nt 6.1") > -1) return "Windows 7";
       if (userAgent.indexOf("win") > -1) return "Windows";
       if (userAgent.indexOf("mac") > -1) return "macOS";
       if (userAgent.indexOf("linux") > -1) return "Linux";
@@ -116,7 +119,7 @@ function DesktopApp() {
       <div className="mb-12 animate-fade-in-up text-center">
         <h3 className="text-xl font-semibold text-indigo-700 mb-4">Other OS downloads:</h3>
         <div className="flex flex-wrap justify-center items-center gap-4">
-          {Object.keys(downloadLinks).map((os) => (
+          {Object.keys(downloadLinks).filter(os => os !== 'Windows 7').map((os) => (
             userOS !== os && (
               <DownloadButton key={os} os={os} />
             )
@@ -160,16 +163,13 @@ function DesktopApp() {
             
             <div className="space-y-6">
               <div>
-       
+                <h4 className="text-xl font-bold text-indigo-700 mb-4">You need to read everything carefully and click the checkmark at the bottom of this popup to get the app download.</h4>
+                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                  <li>This is a desktop app and the web-extension/addon integration will be done in coming days, for now you need to - Install the app using the link provided below to get your downloads.</li>
+                  <li>After installing, launch the app from the desktop icon, paste the video url in the provided text box and then click the "+" icon to add downloads to queue. You can see the video demo here - <a href='https://www.yourvideofile.org/download/dist/video-dwonloader-demo.mp4' target='_blank'>https://www.yourvideofile.org/download/dist/video-dwonloader-demo.mp4</a></li>
+                </ul>
               </div>
-<div><h4 className="text-xl font-bold text-indigo-700 mb-4">You need to read everything carefully and click the checkmark at the bottom of this popup to get the app download.</h4>
-                  <ul className="list-disc list-inside text-gray-600 space-y-2">
-                    <li>This is a desktop app and the web-extension/addon intgration will be done in coming days, for now you need to - Install the app using the link provided below to get your downloads.</li>
-                     <li>After installing, launch the app from the desktop icon, paste the video url in the provided text box and then click the "+" icon to add downloads to queue. You can see the video demo here - <a href='https://www.yourvideofile.org/download/dist/video-dwonloader-demo.mp4' target='_blank'>https://www.yourvideofile.org/download/dist/video-dwonloader-demo.mp4</a> </li>
 
-                  </ul>
-  
-</div>
               <div>
                 <h4 className="text-xl font-bold text-indigo-700 mb-4">Known Issues</h4>
                 <ul className="list-disc list-inside text-gray-600 space-y-2">
