@@ -10,7 +10,7 @@ const osIcons = {
 };
 
 const downloadLinks = {
-  'Windows 7': 'https://www.yourvideofile.org/download/dist/windows-easy.video.downloader-0.4.0_beta.exe',
+  'Windows 7': 'https://www.yourvideofile.org/download/dist/easy.video.downloader-0.4.0_beta_win7.exe',
   Windows: 'https://www.yourvideofile.org/download/dist/windows-easy.video.downloader-0.4.0_beta.exe',
   macOS: 'https://www.yourvideofile.org/download/dist/macOS-easy.video.downloader-0.4.0_beta.dmg',
   Linux: 'https://www.yourvideofile.org/download/dist/linux-easy.video.downloader-0.4.0_beta.AppImage',
