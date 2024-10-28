@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Monitor, Laptop, Terminal, Youtube, Music, Film, List, User, Subtitles, Zap, X } from 'lucide-react';
+import { Monitor, Laptop, Terminal, Youtube, Music, Film, List, User, Subtitles, Zap, X, BookOpen } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 const osIcons = {
   'Windows 7': Monitor,
@@ -10,7 +11,7 @@ const osIcons = {
 };
 
 const downloadLinks = {
-  'Windows 7': 'https://www.yourvideofile.org/download/dist/easy.video.downloader-0.4.0_beta_win7.exe',
+  'Windows 7': 'https://www.yourvideofile.org/download/dist/windows-easy.video.downloader-0.4.0_beta.exe',
   Windows: 'https://www.yourvideofile.org/download/dist/windows-easy.video.downloader-0.4.0_beta.exe',
   macOS: 'https://www.yourvideofile.org/download/dist/macOS-easy.video.downloader-0.4.0_beta.dmg',
   Linux: 'https://www.yourvideofile.org/download/dist/linux-easy.video.downloader-0.4.0_beta.AppImage',
@@ -86,6 +87,15 @@ function DesktopApp() {
         <title>Easy Video Downloader Express - Desktop App</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
+
+      <Link 
+        to="/video-codecs" 
+        className="fixed top-4 right-4 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md text-indigo-600 hover:bg-indigo-50 transition-colors"
+      >
+        <BookOpen className="w-5 h-5" />
+        <span>Documentation</span>
+      </Link>
+
       <div className="text-center mb-12 animate-fade-in-down">
         <h1 className="text-5xl font-bold text-indigo-700 mb-4">Easy Video Downloader Express</h1>
         <p className="text-xl text-gray-600 mb-8">A versatile, multi-platform, audio & video downloader for the web.</p>
@@ -175,10 +185,11 @@ function DesktopApp() {
                 <ul className="list-disc list-inside text-gray-600 space-y-2">
                   <li>This is the beta version, and the app is not signed yet. Your operating-system/browser might show a warning which can be safely ignored.</li>
                   <li>On the first launch, allow the app to finish downloading <strong>ffmpeg, ffprobe, and the background video-grab engine</strong>. Attempting to download links before completion of this process will result in downloads not working. If the process gets stuck, try restarting the app.</li>
-                  <img src="https://desktop.videodroid.org/img/first-launch.png" alt="First Launch" className="my-4 rounded-lg shadow-md" />
+                  <img src="/images/first-launch.png" alt="First Launch" className="my-4 rounded-lg shadow-md" />
                   <li>The button to open the downloaded file or folder is currently not working. Please use the folder icon at the bottom of the app to access your downloads. This folder will be your default download location unless changed in the <strong>Settings</strong> (gear icon) screen. This will be fixed in next release.</li>
-                  <img src="https://desktop.videodroid.org/img/folder-open-icon.png" alt="Folder Open Icon" className="my-4 rounded-lg shadow-md" />
+                  <img src="/images/folder-open-icon.png" alt="Folder Open Icon" className="my-4 rounded-lg shadow-md" />
                   <li>This software is for personal use only, respect copyright laws and the terms of service of the websites you download from, We are not responsible for any misuse of this software.</li>
+                  <li>For videos above 1080p, you might only see VP9 codec options. <Link to="/video-codecs" className="text-indigo-600 hover:underline" title="H.264 (AVC) is recommended for better compatibility with older devices and software like Quicktime player. While it's available for most videos up to 1080p, higher resolutions may only offer the modern higher quality VP9 codec.">Learn more about video codecs</Link></li>
                 </ul>
               </div>
             </div>
