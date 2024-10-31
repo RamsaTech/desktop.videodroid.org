@@ -13,7 +13,7 @@ const osIcons = {
 const downloadLinks = {
   'Windows 7': 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.5.0-beta.exe',
   Windows: 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.5.0-beta.exe',
-  macOS: 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.5.0-beta.dmg',
+  macOS: 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.6.0-beta-signed.pkg',
   Linux: 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.5.0-beta.AppImage',
 };
 
