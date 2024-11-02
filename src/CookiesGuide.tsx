@@ -49,6 +49,7 @@ function CookiesGuide() {
                 <div className="flex items-start gap-3">
                   <Info className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="text-blue-800">
+                    <p className="mb-2">You should open this in your web-browser for better access and readability, use this link - https://dl.videodroid.org/cookies-guide</p>
                     <p className="mb-2">This guide will help you download:</p>
                     <ul className="list-disc ml-6 space-y-1">
                       <li>
@@ -58,6 +59,7 @@ function CookiesGuide() {
                       <li>Age-restricted videos</li>
                       <li>Videos that require sign-in</li>
                     </ul>
+                    
                   </div>
                 </div>
               </div>
@@ -306,7 +308,6 @@ function CookiesGuide() {
                             Important Security Tips
                           </h3>
                           <ul className="list-disc ml-6 space-y-2 text-yellow-700">
-                            <li>Delete the cookies.txt file after importing</li>
                             <li>
                               Never share your cookies.txt file with anyone
                             </li>
