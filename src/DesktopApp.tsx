@@ -11,10 +11,10 @@ const osIcons = {
 };
 
 const downloadLinks = {
-  'Windows 7': 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.5.0-beta.exe',
-  Windows: 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.5.0-beta.exe',
-  macOS: 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.6.0-beta-signed.pkg',
-  Linux: 'https://www.yourvideofile.org/download/dist/EasyVideoDownloaderExpress-0.5.0-beta.AppImage',
+  'Windows 7': 'https://www.yourvideofile.org/download/dist/full/windows/EasyVideoDownloaderExpress-0.6.0-beta.exe',
+  Windows: 'https://www.yourvideofile.org/download/dist/full/windows/EasyVideoDownloaderExpress-0.6.0-beta.exe',
+  macOS: 'https://www.yourvideofile.org/download/dist/full/mac/EasyVideoDownloaderExpress-0.6.0-beta-signed.pkg',
+  Linux: 'https://www.yourvideofile.org/download/dist/full/linux/EasyVideoDownloaderExpress-0.6.0-beta.AppImage',
 };
 
 const features = [
