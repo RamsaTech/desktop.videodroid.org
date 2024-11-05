@@ -186,9 +186,10 @@ function DesktopApp() {
                   <li>This is the beta version, and the app is not signed yet. Your operating-system/browser might show a warning which can be safely ignored. You can see OS specific instructions here <a href='https://dl.videodroid.org/installation-guide' target='_blank'>https://dl.videodroid.org/installation-guide</a></li>
                   <li>On the first launch, allow the app to finish downloading <strong>ffmpeg, ffprobe, and the background video-grab engine</strong>. Attempting to download links before completion of this process will result in downloads not working. If the process gets stuck, try restarting the app.</li>
                   <img src="./images/first-launch.png" alt="First Launch" className="my-4 rounded-lg shadow-md" />
+                  <li>For videos above 1080p, you might only see VP9 codec options. <Link to="/video-codecs" className="text-indigo-600 hover:underline" title="H.264 (AVC) is recommended for better compatibility with older devices and software like Quicktime player. While it's available for most videos up to 1080p, higher resolutions may only offer the modern higher quality VP9 codec.">Learn more about video codecs</Link></li>
+                  <li>While using VPN/Proxy your shared IP might get flagged by Youtube and you will get "Sign in to confirm you’re not a bot" error, to mitigate this use the -  <Link to="/cookies-guide" className="text-indigo-600 hover:underline" title="Cookie Guide">Cookie import method</Link>.</li>
 
                   <li>This software is for personal use only, respect copyright laws and the terms of service of the websites you download from, We are not responsible for any misuse of this software.</li>
-                  <li>For videos above 1080p, you might only see VP9 codec options. <Link to="/video-codecs" className="text-indigo-600 hover:underline" title="H.264 (AVC) is recommended for better compatibility with older devices and software like Quicktime player. While it's available for most videos up to 1080p, higher resolutions may only offer the modern higher quality VP9 codec.">Learn more about video codecs</Link></li>
                 </ul>
               </div>
             </div>
