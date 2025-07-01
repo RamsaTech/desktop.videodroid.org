@@ -11,8 +11,8 @@ const osIcons = {
 };
 
 const downloadLinks = {
-  'Windows 7': 'https://www.yourvideofile.org/download/dist/full/windows/EasyVideoDownloaderExpress-0.7.1-beta.exe',
-  Windows: 'https://www.yourvideofile.org/download/dist/full/windows/EasyVideoDownloaderExpress-0.7.1-beta.exe',
+  'Windows 7': 'https://www.yourvideofile.org/download/dist/full/windows/signed-packages.zip',
+  Windows: 'https://www.yourvideofile.org/download/dist/full/windows/signed-packages.zip',
   macOS: 'https://www.yourvideofile.org/download/dist/full/mac/EasyVideoDownloaderExpress-0.7.1-beta-signed.pkg',
   Linux: 'https://www.yourvideofile.org/download/dist/full/linux/EasyVideoDownloaderExpress-0.7.1-beta.AppImage',
 };
